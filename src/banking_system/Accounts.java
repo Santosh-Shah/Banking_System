@@ -82,7 +82,7 @@ public class Accounts {
 
     public boolean account_exist(String email){
         String query = "SELECT account_number from Accounts WHERE email = ?";
-        try{
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, email);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -95,6 +95,5 @@ public class Accounts {
             e.printStackTrace();
         }
         return false;
-
     }
 }

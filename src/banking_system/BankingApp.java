@@ -11,10 +11,11 @@ public class BankingApp {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-        }catch (ClassNotFoundException e){
+        } catch (ClassNotFoundException e){
             System.out.println(e.getMessage());
         }
-        try{
+
+        try {
             Connection connection = DriverManager.getConnection(url, username, password);
             Scanner scanner =  new Scanner(System.in);
             Users users = new Users(connection, scanner);
@@ -24,7 +25,7 @@ public class BankingApp {
             String email;
             long account_number;
 
-            while(true){
+            while(true) {
                 System.out.println("*** WELCOME TO BANKING SYSTEM ***");
                 System.out.println();
                 System.out.println("1. Register");
